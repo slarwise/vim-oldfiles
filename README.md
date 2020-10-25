@@ -1,37 +1,40 @@
-# Vim-oldfiles
+# vim-oldfiles
 
-A (Neo)vim plugin for editing files that are in the `v:oldfiles` list. Two
-commands are provided `Oldfile` and `Soldfile` which should work exactly like
-`:edit` `:find`, `:buffer`, `:split`, `:sfind`, `:sbuffer` and similar. If they
-don't, file an issue! Note that you can shorten the commands, for example if you
-don't have any commands starting with `O`, it will be enough to type `:O`.
+A (neo)vim plugin for editing oldfiles. Two commands are provided, `Oldfile` and
+`Soldfile`, which works similarly to `buffer` and `sbuffer`.
 
-## Example usage
+## Features
+
+- Tab completion
+- Only list readable oldfiles
+- Works with partial filenames, the latest edited file that matches will be
+  chosen. Not how this is different to `[s]buffer`, which will only take a
+  unique match.
+- `Oldfile` is simply a wrapper for `edit` (and `Soldfile` for `split`), so
+  `<bang>`, `++opt`,`+cmd` and command modifiers such as `vertical` should work.
+
+## Examples
 
 The below examples assume that you don't have any other commands starting with
-`O`. 
+`O`.
 
 ```vim
-:O partial-filename<TAB> " Get completion for partial-filename
-:O filename<CR> " Edit the first oldfile matching filename
-:O +/pattern filename " Like above but go to the first match of pattern
-:O! filename<CR> " Go to the first oldfile matching filename ignoring changes in current buffer
+:O {partial-filename}<TAB> " Get completion for partial-filename
+:O {filename}<CR> " Edit the first oldfile matching filename
+:O +/pattern {filename} " Like above but go to the first match of pattern
+:O! {filename}<CR> " Go to the first oldfile matching filename ignoring changes in current buffer
 ```
 
-The command `:Soldfile` works the same as `:Oldfile` except it opens the file in
-a new split.
+The command `Soldfile` works the same as `Oldfile` except it opens the file in a
+new split. Prefix `Soldfile` with `vertical` to get a vertical split. See the
+docs, `:help :Oldfile` and `:help :Soldfile`, for all details. Happy vimming :)
 
 ## Related plugins
 
 - [vim-oldfiles](https://github.com/gpanders/vim-oldfiles)
 
-## Relevant vim help
+## Doing it the vim way
 
-```vim
-:help :edit
-:help :find
-:help :buffer
-:help :split
-:help :sfind
-:help :sbuffer
-```
+This plugin is an alternative to `:browse oldfiles` and the numbered marks.
+These are described under `help :oldfiles` and `:help viminfo-file-marks` in vim
+and `:help shada-file-marks` in neovim.
