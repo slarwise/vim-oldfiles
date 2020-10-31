@@ -1,8 +1,8 @@
 *oldfiles.txt*       Quickly edit oldfiles
 
 Edit files from |v:oldfiles|. Supports command modifiers such as |:vertical|
-and |:aboveleft| as well as |+cmd|, <bang> and completion. Unreadable oldfiles
-will not be suggested when completing.
+and |:aboveleft| as well as |+cmd|, <bang> and command line completion.
+Unreadable oldfiles will not be suggested when completing.
 
 :Oldfile[!] [+cmd] {oldfile}				*:Oldfile*
 		Edit {oldfile} if it exists in |v:oldfiles|. A partial
