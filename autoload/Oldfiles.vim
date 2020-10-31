@@ -12,7 +12,6 @@ endfunction
 
 function! Oldfiles#EditFirstMatchingOldfile(cmdline_args, split, mods, bang) abort
     let args = s:ParseArgs(a:cmdline_args)
-    echo args
     if empty(args['file'])
         echohl ErrorMsg
         echo "Oldfiles: No filename was given"
