@@ -13,6 +13,7 @@ A (neo)vim plugin for editing oldfiles. Two commands are provided, `Oldfile` and
 - Supports command modifiers such as `vertical` and `aboveleft`.
 - Supports `+cmd`, e.g. `+/pattern`.
 - Supports `<bang>`.
+- Ignore oldfiles matching certain patterns, see [Configuration](#configuration).
 
 ## Examples
 
