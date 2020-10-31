@@ -30,6 +30,22 @@ The command `Soldfile` works the same as `Oldfile` except it opens the file in a
 new split. Prefix `Soldfile` with `vert[ical]` to get a vertical split. See the
 docs, `:help :Oldfile` and `:help :Soldfile`, for all details. Happy vimming :)
 
+## Configuration
+
+To ignore oldfiles that match a certain pattern, do
+
+```vim
+let g:oldfiles_ignore = <list-of-patterns>
+```
+
+If an oldfile matches any of the patterns in `<list-of-patterns>` it will not be
+a candidate for completion or editing. For example, to ignore commit messages
+and vim helpfiles, you could do
+
+```vim
+let g:oldfiles_ignore = ['COMMIT_EDITMSG', '/runtime/doc/']
+```
+
 ## Doing it the vim way
 
 This plugin is an alternative to `:browse oldfiles` and the numbered marks.
