@@ -3,7 +3,11 @@ function! Oldfiles#Complete(arglead, cmdline, cursorpos) abort
 endfunction
 
 function s:GetReadableOldfiles() abort
-    let ignore_pattern = empty(g:oldfiles_ignore) ? '^$' : join(g:oldfiles_ignore, '\|')
+    try
+        let ignore_pattern = empty(g:oldfiles_ignore) ? '^$' : join(g:oldfiles_ignore, '\|')
+    catch
+        let ignore_pattern = '^$'
+    endtry
     return filter(copy(v:oldfiles), 'filereadable(v:val) && v:val !~# ignore_pattern')
 endfunction
 
