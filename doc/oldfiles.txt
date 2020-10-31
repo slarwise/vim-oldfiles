@@ -1,0 +1,16 @@
+*oldfiles.txt*       Quickly edit oldfiles
+
+Edit files from |v:oldfiles|. Supports tab-completion, unreadable oldfiles
+will not be listed.
+
+:Oldfile[!] [+cmd] {oldfile}		    *:Oldfile*
+		Edit {oldfile} if it exists in |v:oldfiles|. A partial
+		name also works, the first match found in |v:oldfiles|
+		will be used.
+		Also see |+cmd|.
+
+:Soldfile [+cmd] {oldfile}		    *:Soldfile*
+		Just like |:Oldfile| but split window and edit oldfile
+		in the new window.
+		Also see |+cmd|.
+ vim:tw=78:ts=8:noet:ft=help:norl:
