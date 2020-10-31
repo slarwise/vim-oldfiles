@@ -55,4 +55,4 @@ last opened file, just do `'0`.
 
 ## Related plugins
 
-- [vim-oldfiles](https://github.com/gpanders/vim-oldfiles)
+- [gpanders/vim-oldfiles](https://github.com/gpanders/vim-oldfiles)
