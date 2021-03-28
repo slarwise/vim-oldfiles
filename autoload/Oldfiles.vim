@@ -11,7 +11,7 @@ function s:GetReadableOldfiles() abort
     return filter(copy(v:oldfiles), 'filereadable(v:val) && v:val !~# ignore_pattern')
 endfunction
 
-function! Oldfiles#EditFirstMatchingOldfile(cmdline_args, split, mods, bang) abort
+function! Oldfiles#EditFirstMatchingOldfile(cmdline_args, edit_cmd, mods, bang) abort
     let args = s:ParseArgs(a:cmdline_args)
     if empty(args['file'])
         call s:EchoError('No filename was given')
@@ -24,7 +24,7 @@ function! Oldfiles#EditFirstMatchingOldfile(cmdline_args, split, mods, bang) abo
         return
     endif
 
-    let edit_cmd = (a:split ? 'split' : 'edit') . a:bang
+    let edit_cmd = a:edit_cmd . a:bang
     let cmd = join([a:mods, edit_cmd, args['cmd'], first_matched_oldfile])
     execute cmd
 endfunction

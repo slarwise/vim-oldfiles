@@ -1,7 +1,7 @@
 # vim-oldfiles
 
-A (neo)vim plugin for editing oldfiles. Two commands are provided, `Oldfile` and
-`Soldfile`, which work similarly to `buffer` and `sbuffer`.
+A (neo)vim plugin for editing oldfiles. Three commands are provided, `Oldfile`,
+`Soldfile` and `Voldfile`, which work similarly to `buffer` and `sbuffer`.
 
 ## Features
 
@@ -27,8 +27,8 @@ The below examples assume that you don't have any other commands starting with
 :O! {filename}<CR> " Go to the first oldfile matching filename ignoring changes in current buffer
 ```
 
-The command `Soldfile` works the same as `Oldfile` except it opens the file in a
-new split. Prefix `Soldfile` with `vert[ical]` to get a vertical split. See the
+The commands `Soldfile` and `Voldfile` works the same as `Oldfile` except it
+opens the file in a new split, horizontal and vertical respectively. See the
 docs, `:help :Oldfile` and `:help :Soldfile`, for all details. Happy vimming :)
 
 ## Configuration
